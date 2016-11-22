@@ -1,0 +1,27 @@
+{
+  "name": "concert-qa",
+  "authors": [
+    "Juan David Henao"
+  ],
+  "description": "Front end dependencies for hangman game",
+  "main": "app.js",
+  "moduleType": [],
+  "keywords": [
+    "angular", "hangman", "game"
+  ],
+  "ignore": [
+    "node_modules",
+    "app/lib/**"
+  ],
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-messages": "^1.5.0",
+    "angular-ui-router": "^0.2.18",
+    "angular-sanitize": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "bootstrap": "^3.3.6",
+    "jquery": "^3.1.0"
+  }
+}

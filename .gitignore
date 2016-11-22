@@ -1,0 +1,11 @@
+### Node ###
+npm-debug.log*
+
+### Text Editor ###
+# Visual Studio Code - https://code.visualstudio.com/
+.settings/
+.vscode/
+
+### Dependency directories ###
+node_modules
+app/lib
