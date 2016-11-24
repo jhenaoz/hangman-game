@@ -8,4 +8,4 @@ const server = app.listen(config.port || 9000, () => {
 });
 
 require('./config/express')(app);
-// require('./routes')(app);
+require('./routes')(app);

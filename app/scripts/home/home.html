@@ -1,0 +1,10 @@
+<div>
+    <h3>Enter Player Name</h3>
+    <form name="playerForm" ng-submit="home.submit()" novalidate>
+        <div name="home.player.name">
+            <input type="text" name="playerName" ng-model="home.player.name">    
+        </div>
+        <button type="submit">Start</button>
+    </form>
+    <p>Number of words in the Database: {{home.words.length}}</p>
+</div>
