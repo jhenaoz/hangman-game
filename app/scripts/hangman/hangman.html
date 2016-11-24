@@ -1,3 +1,29 @@
 <div>
+    <div id="hangmanImage">
+        
+    </div>
     
+    <div id="wordContainer">
+        <span ng-repeat="letter in hangman.wordToGuess.split('') track by $index">
+            ___
+        </span>
+    </div>
+
+    <div id="lettersContainer">
+        <div>
+            <span ng-repeat="key in hangman.keyboard.slice(0,9) track by $index">
+                {{key.letter}}
+            </span>
+        </div>
+        <div>
+             <span ng-repeat="key in hangman.keyboard.slice(10, 19) track by $index">
+                {{key.letter}}
+            </span>
+        </div>
+        <div>
+             <span ng-repeat="key in hangman.keyboard.slice(20, 27) track by $index">
+                {{key.letter}}
+            </span>
+        </div>
+    </div>
 </div>
