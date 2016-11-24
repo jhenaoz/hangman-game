@@ -1,12 +1,10 @@
 (function(){
     'use strict';
 
-    angular
-        .module('hangman')
-        .controller('HomeController', HomeController)
+    angular.module('hangman').controller('HomeController', HomeController)
 
     /** @ngInject */
-    function HomeController(WordsService){
+    function HomeController(WordsService, PlayerService, $state){
         var vm = this;
         vm.player = {};
         vm.words = [];
@@ -20,7 +18,10 @@
         }
 
         function submit(){
-            console.log(vm);
+            PlayerService.createPlayer(vm.player).then(function(response) {
+                console.log(response);
+                $state.go('hangman');
+            });
         };
     }
 }());

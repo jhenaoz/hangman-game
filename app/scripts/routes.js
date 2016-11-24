@@ -10,5 +10,10 @@ function RoutesConfig($stateProvider, $urlRouterProvider){
     templateUrl: 'scripts/home/home.html',
     controller: 'HomeController',
     controllerAs: 'home'
+  }).state('hangman', {
+    url: '/hangman',
+    templateUrl: 'scripts/hangman/hangman.html',
+    controller: 'HangmanController',
+    controllerAs: 'hangman'
   });
 }
