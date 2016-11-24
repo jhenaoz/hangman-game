@@ -1,27 +1,28 @@
 <div>
-    <div id="hangmanImage">
-        
+    <div>
+       Wrong moves left: {{5-hangman.errorsNumber}} 
     </div>
     
     <div id="wordContainer">
         <span ng-repeat="letter in hangman.wordToGuess.split('') track by $index">
-            ___
+            <span ng-show="hangman.getLetter(letter).used">{{letter}}</span>
+            <span ng-hide="hangman.getLetter(letter).used">__</span>
         </span>
     </div>
 
     <div id="lettersContainer">
         <div>
-            <span ng-repeat="key in hangman.keyboard.slice(0,9) track by $index">
+            <span ng-repeat="key in hangman.keyboard.slice(0,9) track by $index" ng-click="hangman.guessLetter(key)" ng-show="!key.used">
                 {{key.letter}}
             </span>
         </div>
         <div>
-             <span ng-repeat="key in hangman.keyboard.slice(10, 19) track by $index">
+             <span ng-repeat="key in hangman.keyboard.slice(10, 19) track by $index" ng-click="hangman.guessLetter(key)" ng-show="!key.used">
                 {{key.letter}}
             </span>
         </div>
         <div>
-             <span ng-repeat="key in hangman.keyboard.slice(20, 27) track by $index">
+             <span ng-repeat="key in hangman.keyboard.slice(20, 27) track by $index" ng-click="hangman.guessLetter(key)" ng-show="!key.used">
                 {{key.letter}}
             </span>
         </div>

@@ -12,6 +12,8 @@
         this.keyboard = [];
         this.errorsNumber = 0;
         this.initGame = initGame;
+        this.getLetter = getLetter;
+        this.guessAttempt = guessAttempt;
         this.wordToGuess = '';
 
         function initGame() {
@@ -39,15 +41,22 @@
         }
 
         function guessAttempt(letter) {
-            if (this.wordToGuess.indexOf(letter) > 0) {
+            if (this.wordToGuess.indexOf(letter) < 0) {
                 this.errorsNumber++;
-                if (errorsNumber === 5) {
+                if (this.errorsNumber === 5) {
                     throw('Max guess attempts reached');
                 }
-            }
-            this.keyboard[this.keyboard.indexOf(letter)].used = true;
+            }            
         }
 
+        function getLetter(letter) {
+            for(var i = 0; i <= this.keyboard.length; i++) {
+                if(this.keyboard[i].letter === letter){
+                    return this.keyboard[i];
+                }
+            }
+            throw('Letter not found, only letters allowed');
+        }
     }
 
 }());
